@@ -1,6 +1,7 @@
 var button = document.getElementById("enter");
 var input = document.getElementById("userinput");
 var ul = document.querySelector("ul");
+var task = document.getElementsByTagName("li");
 
 function inputLength() {
 	return input.value.length;
@@ -25,6 +26,13 @@ function addListAfterKeypress(event) {
 	}
 }
 
-button.addEventListener("click", addListAfterClick);
+function completeTask(ev){
+	if (ev.target.tagName === "LI") {
+		ev.target.classList.toggle("done");
+	}
+}
 
+button.addEventListener("click", addListAfterClick);
 input.addEventListener("keypress", addListAfterKeypress);
+//click on an item to toggle the done class
+ul.addEventListener("click", completeTask);
