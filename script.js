@@ -14,6 +14,7 @@ function createListElement() {
 	input.value = "";
 }
 
+//functions for creating new tasks
 function addListAfterClick() {
 	if (inputLength() > 0) {
 		createListElement();
@@ -26,9 +27,18 @@ function addListAfterKeypress(event) {
 	}
 }
 
+//function for marking task as completed
 function completeTask(ev){
 	if (ev.target.tagName === "LI") {
 		ev.target.classList.toggle("done");
+	}
+}
+
+//function for deleting tasks
+function deleteTask(evt){
+	if(evt.target.tagName === "SPAN"){
+		console.log("Task Deleted");
+		evt.target.parentElement.remove()
 	}
 }
 
@@ -36,3 +46,5 @@ button.addEventListener("click", addListAfterClick);
 input.addEventListener("keypress", addListAfterKeypress);
 //click on an item to toggle the done class
 ul.addEventListener("click", completeTask);
+//Delete tasks for list
+ul.addEventListener("click", deleteTask);
