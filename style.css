@@ -1,29 +1,102 @@
 /* Glogal Styles */
-li {
+body {
+  display: flex;
+  justify-content: center;
+  font-family: Roboto;
+  background: #1c92d2;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f2fcfe, #1c92d2);  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(left, #f2fcfe, #1c92d2);
+  background: -o-linear-gradient(left, #f2fcfe, #1c92d2);
+  background: linear-gradient(to right, #f2fcfe, #1c92d2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h1 {
+  background: #2980e9;
+  color: white;
+  margin: 0;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  background: #ffffff;
+  height: 40px;
+  line-height: 40px;
+  color: #666;
   cursor: pointer;
 }
 
-.coolTitle {
-  text-align: center;
-  font-family: 'Oswald', Helvetica, sans-serif;
-  font-size: 40px;
-  transform: skewY(-10deg);
-  letter-spacing: 4px;
-  word-spacing: -8px;
-  color: tomato;
-  text-shadow:
-    -1px -1px 0 firebrick,
-    -2px -2px 0 firebrick,
-    -3px -3px 0 firebrick,
-    -4px -4px 0 firebrick,
-    -5px -5px 0 firebrick,
-    -6px -6px 0 firebrick,
-    -7px -7px 0 firebrick,
-    -8px -8px 0 firebrick,
-    -30px 20px 40px dimgrey;
+li:nth-child(2n){
+  background: #f7f7f7;
 }
 
+li:hover span {
+  width: 40px;
+  opacity: 1.0;
+}
+
+input {
+  font-size: 18px;
+  color: #2980e9;
+  background-color: #f7f7f7;
+  /* width: 100%; */
+  padding:13px 13px 13px 20px;
+   -webkit-box-sizing: border-box;
+           box-sizing: border-box;
+  border: 3px solid rgba(0,0,0,0);
+}
+
+input:focus {
+  background: white;
+  border: 3px solid #2980e9;
+  outline: none;
+}
+
+::placeholder {
+  opacity: 0.7;
+}
+
+button {
+    background: transparent;
+    color: gray;
+    padding: 15px;
+    width: 20%;
+    font: 600 16px Roboto;
+    border: none;
+    cursor: pointer;
+}
+
+span {
+  background: #e74c3c;
+  height: 40px;
+  margin-right: 20px;
+  text-align: center;
+  color: white;
+  width: 0;
+  display: inline-block;
+  transition: 0.2s linear;
+  opacity: 0;
+}
+
+
+/* Todo List Styles  */
+#container {
+  margin: 100px auto;
+  width: 360px;
+  background: #f7f7f7;
+  box-shadow: 0 0 1em rgba(0,0,1,0.5);
+}
+
+
 .done {
+  color: gray;
   text-decoration: line-through;
 }

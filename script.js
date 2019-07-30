@@ -14,10 +14,10 @@ function createListElement() {
 
 	icon.classList.add('fas', 'fa-trash-alt');
 	span.appendChild(icon);
+	ul.appendChild(li).append(span);
 	li.appendChild(document.createTextNode(input.value));
-	li.appendChild(span);
-	ul.appendChild(li);
 	input.value = "";
+	// li.appendChild(span);
 }
 
 //functions for creating new tasks
