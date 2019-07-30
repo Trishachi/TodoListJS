@@ -1,7 +1,7 @@
 var button = document.getElementById("enter");
 var input = document.getElementById("userinput");
 var ul = document.querySelector("ul");
-var task = document.getElementsByTagName("li");
+// var task = document.getElementsByTagName("li");
 
 function inputLength() {
 	return input.value.length;
@@ -9,7 +9,13 @@ function inputLength() {
 
 function createListElement() {
 	var li = document.createElement("li");
+	var span = document.createElement("span");
+	var icon = document.createElement("i");
+
+	icon.classList.add('fas', 'fa-trash-alt');
+	span.appendChild(icon);
 	li.appendChild(document.createTextNode(input.value));
+	li.appendChild(span);
 	ul.appendChild(li);
 	input.value = "";
 }
@@ -36,9 +42,8 @@ function completeTask(ev){
 
 //function for deleting tasks
 function deleteTask(evt){
-	if(evt.target.tagName === "SPAN"){
-		console.log("Task Deleted");
-		evt.target.parentElement.remove()
+	if(evt.target.tagName === "I"){
+		evt.target.parentElement.parentElement.remove()
 	}
 }
 
