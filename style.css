@@ -95,8 +95,20 @@ span {
   box-shadow: 0 0 1em rgba(0,0,1,0.5);
 }
 
+.fa-plus {
+  float: right;
+  cursor: pointer;
+}
 
 .done {
   color: gray;
   text-decoration: line-through;
+}
+
+
+#inputField.toggleAddTask {
+  display: none;
+  opacity: 0;
+  transition: opacity 2s ease-in-out,
+              display 2s ease-in-out;
 }

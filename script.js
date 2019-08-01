@@ -1,7 +1,8 @@
 var button = document.getElementById("enter");
 var input = document.getElementById("userinput");
 var ul = document.querySelector("ul");
-// var task = document.getElementsByTagName("li");
+var plus = document.querySelector("#toggleAdd");
+var inputField = document.querySelector("#inputField");
 
 function inputLength() {
 	return input.value.length;
@@ -17,7 +18,6 @@ function createListElement() {
 	ul.appendChild(li).append(span);
 	li.appendChild(document.createTextNode(input.value));
 	input.value = "";
-	// li.appendChild(span);
 }
 
 //functions for creating new tasks
@@ -40,6 +40,11 @@ function completeTask(ev){
 	}
 }
 
+//Function for Toggling Add new todo Application
+function toggleAddNewTask(){
+	inputField.classList.toggle("toggleAddTask");
+}
+
 //function for deleting tasks
 function deleteTask(evt){
 	if(evt.target.tagName === "I"){
@@ -53,3 +58,5 @@ input.addEventListener("keypress", addListAfterKeypress);
 ul.addEventListener("click", completeTask);
 //Delete tasks for list
 ul.addEventListener("click", deleteTask);
+//Toggle adding new task
+plus.addEventListener("click", toggleAddNewTask);
